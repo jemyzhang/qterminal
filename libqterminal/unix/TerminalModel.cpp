@@ -31,6 +31,7 @@
 #include <stdlib.h>
 
 // Qt
+#if QT_VERSION < 0x050000
 #include <QtGui/QApplication>
 #include <QtCore/QByteRef>
 #include <QtCore/QDir>
@@ -38,6 +39,14 @@
 #include <QtCore/QRegExp>
 #include <QtCore/QStringList>
 #include <QtCore>
+#else
+#include <QApplication>
+#include <QByteRef>
+#include <QDir>
+#include <QFile>
+#include <QRegExp>
+#include <QStringList>
+#endif
 
 #include "unix/TerminalView.h"
 #include "unix/Vt102Emulation.h"

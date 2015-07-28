@@ -22,13 +22,24 @@
 #ifndef FILTER_H
 #define FILTER_H
 
+#include <QtGlobal>
+
 // Qt
+#if QT_VERSION < 0x050000
 #include <QtGui/QAction>
 #include <QtCore/QList>
 #include <QtCore/QObject>
 #include <QtCore/QStringList>
 #include <QtCore/QHash>
 #include <QtCore/QRegExp>
+#else
+#include <QAction>
+#include <QList>
+#include <QObject>
+#include <QStringList>
+#include <QHash>
+#include <QRegExp>
+#endif
 
 // Local
 #include "unix/Character.h"

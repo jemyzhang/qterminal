@@ -1,6 +1,10 @@
 TEMPLATE	= app
 
+lessThan(QT_MAJOR_VERSION, 5) { 
 QT += core gui
+}else{
+QT += widgets
+}
 
 SOURCES 	= main.cpp
 INCLUDEPATH 	= ../libqterminal

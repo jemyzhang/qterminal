@@ -33,6 +33,7 @@
 #include <unistd.h>
 
 // Qt
+#if QT_VERSION < 0x050000
 #include <QtGui/QApplication>
 #include <QtGui/QClipboard>
 #include <QtCore/QHash>
@@ -42,6 +43,17 @@
 #include <QtCore/QThread>
 
 #include <QtCore/QTime>
+#else
+#include <QApplication>
+#include <QClipboard>
+#include <QHash>
+#include <QKeyEvent>
+#include <QRegExp>
+#include <QTextStream>
+#include <QThread>
+
+#include <QTime>
+#endif
 
 // Konsole
 #include "unix/KeyboardTranslator.h"

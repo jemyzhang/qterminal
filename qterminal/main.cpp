@@ -16,10 +16,15 @@
     Boston, MA 02110-1301, USA.
 */
 						
-
+#if QT_VERSION < 0x050000
 #include <QtCore>
 #include <QtGui>
+#else
+#endif
 #include <QApplication>
+#if QT_VERSION >= 0x050000
+#include <QMainWindow>
+#endif
 
 #include "QTerminal.h"
 

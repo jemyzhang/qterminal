@@ -992,7 +992,11 @@ void Vt102Emulation::sendKeyEvent( QKeyEvent* event )
                                          "is missing.");
 
         reset();
+#if QT_VERSION < 0x050000
         receiveData( translatorError.toAscii().constData() , translatorError.count() );
+#else
+        receiveData( translatorError.toLatin1().constData() , translatorError.count() );
+#endif
     }
 }
 

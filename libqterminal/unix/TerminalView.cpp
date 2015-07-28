@@ -27,6 +27,7 @@
 #include "unix/TerminalView.h"
 
 // Qt
+#if QT_VERSION < 0x050000
 #include <QtGui/QApplication>
 #include <QtGui/QBoxLayout>
 #include <QtGui/QClipboard>
@@ -43,6 +44,27 @@
 #include <QtGui/QStyle>
 #include <QtCore>
 #include <QtGui>
+#else
+#include <QApplication>
+#include <QBoxLayout>
+#include <QClipboard>
+#include <QKeyEvent>
+#include <QEvent>
+#include <QTime>
+#include <QFile>
+#include <QGridLayout>
+#include <QLabel>
+#include <QLayout>
+#include <QPainter>
+#include <QPixmap>
+#include <QScrollBar>
+#include <QStyle>
+#include <QTimer>
+#include <QDrag>
+#include <QMimeData>
+#include <QToolTip>
+#include <QTextStream>
+#endif
 
 #include "unix/Filter.h"
 #include "unix/konsole_wcwidth.h"

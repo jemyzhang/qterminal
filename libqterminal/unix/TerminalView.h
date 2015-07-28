@@ -25,9 +25,16 @@
 #define TERMINALVIEW_H
 
 // Qt
+#include <QtGlobal>
+#if QT_VERSION < 0x050000
 #include <QtGui/QColor>
 #include <QtCore/QPointer>
 #include <QtGui/QWidget>
+#else
+#include <QColor>
+#include <QPointer>
+#include <QWidget>
+#endif
 
 // Konsole
 #include "unix/Filter.h"

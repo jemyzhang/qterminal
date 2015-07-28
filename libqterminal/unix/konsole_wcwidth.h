@@ -10,9 +10,15 @@
 #ifndef	_KONSOLE_WCWIDTH_H_
 #define	_KONSOLE_WCWIDTH_H_
 
+#include <QtGlobal>
+
 // Qt
+#if QT_VERSION < 0x050000
 #include <QtCore/QBool>
 #include <QtCore/QString>
+#else
+#include <QString>
+#endif
 
 int konsole_wcwidth(quint16 ucs);
 #if 0

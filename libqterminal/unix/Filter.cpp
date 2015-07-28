@@ -26,6 +26,7 @@
 #include <iostream>
 
 // Qt
+#if QT_VERSION < 0x050000
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
 #include <QtGui/QClipboard>
@@ -33,6 +34,15 @@
 
 #include <QtCore/QSharedData>
 #include <QtCore>
+#else
+#include <QAction>
+#include <QApplication>
+#include <QClipboard>
+#include <QString>
+
+#include <QSharedData>
+#include <QTextStream>
+#endif
 
 // Konsole
 #include "unix/TerminalCharacterDecoder.h"

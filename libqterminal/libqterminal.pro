@@ -3,8 +3,11 @@ VERSION		= 0.1.0
 TARGET		= qterminal
 
 CONFIG		+= qt staticlib
-
+lessThan(QT_MAJOR_VERSION, 5) { 
 QT += core gui
+}else{
+QT += widgets
+}
 
 INCLUDEPATH	+= .
 
